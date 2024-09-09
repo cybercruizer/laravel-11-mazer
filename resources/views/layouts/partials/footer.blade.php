@@ -4,9 +4,8 @@
             <p>2023 &copy; Mazer</p>
         </div>
         <div class="float-end">
-            <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                by <a href="https://saugi.me" target="_blank">Saugi</a> | Laravel modification <span class="text-danger"><i
-                class="bi bi-tools icon-mid"></i></span> by <a href="https://github.com/J3ndra" target="_blank">Junianto</a> </p>
+            <p>Mazer Template 
+                by <a href="https://saugi.me" target="_blank">Saugi</a> | Attendance System by <a href="https://facebook.com/nurkholisakhm" target="_blank">A Nurkholis</a> </p>
         </div>
     </div>
 </footer>

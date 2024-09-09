@@ -14,6 +14,7 @@
 
 <body>
     @vite('resources/js/initTheme.js')
+    @include('sweetalert::alert')
     <div id="app">
         <div id="sidebar">
             @include('layouts.partials.sidebar')

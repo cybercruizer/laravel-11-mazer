@@ -15,6 +15,7 @@ export default defineConfig({
                 "node_modules/perfect-scrollbar",
             ),
             "~@fontsource": resolve(__dirname, "node_modules/@fontsource"),
+            //"$": "jQuery",
         },
     },
     plugins: [
@@ -28,8 +29,8 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/js/initTheme.js",
                 "resources/js/components/dark.js",
-                "resources/js/pages/sweetalert2.js",
-                "resources/sass/pages/sweetalert2.scss",
+                //"resources/js/pages/sweetalert2.js",
+                //"resources/sass/pages/sweetalert2.scss",
             ],
             refresh: true,
         }),

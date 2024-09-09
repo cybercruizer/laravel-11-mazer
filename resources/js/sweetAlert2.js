@@ -1,0 +1,1 @@
+import Swal from 'sweetAlert2/dist/sweetalert2';

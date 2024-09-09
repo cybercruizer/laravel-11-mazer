@@ -1,10 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\JamkerjaController;
+use App\Http\Controllers\PengaturanController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/tesalert', function () {
+    return view('tesalert');
 });
 
 Route::get('/dashboard', function () {
@@ -21,6 +27,29 @@ Route::middleware('auth')->group(function () {
         Route::get('accordion', function() {
             return view('mazer.components.accordion');
         })->name('accordion');
+    });
+
+    Route::group(['prefix' => 'device', 'as' => 'device.'], function() {
+        Route::get('/', [DeviceController::class, 'index'])->name('index');
+        Route::post('store', [DeviceController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [DeviceController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [DeviceController::class, 'update'])->name('update');
+        Route::delete('destroy/{id}', [DeviceController::class, 'destroy'])->name('destroy');
+        
+    });
+    Route::group(['prefix' => 'jamkerja', 'as' => 'jamkerja.'], function() {
+        Route::get('/', [JamkerjaController::class, 'index'])->name('index');
+        Route::get('show/{id}', [JamkerjaController::class, 'show'])->name('show');
+        Route::post('store', [JamkerjaController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [JamkerjaController::class, 'edit'])->name('edit');
+        Route::post('update', [JamkerjaController::class, 'update'])->name('update');
+        Route::delete('destroy/{id}', [JamkerjaController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'pengaturan', 'as' => 'pengaturan.'], function() {
+        Route::get('/', [PengaturanController::class, 'index'])->name('index');
+        Route::post('store', [PengaturanController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [PengaturanController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [PengaturanController::class, 'update'])->name('update');
     });
 });
 
